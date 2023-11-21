@@ -1,16 +1,14 @@
 import React from 'react';
 import "./Toast.css";
 
-const Toast = () => {
+const Toast = (props) => {
     return (
-        <div className = 'wrapper'>
-            <div className='toast'>
-                <main className='toast__message'> 
-                    <p className='toast__message-title'>dddd</p>
-                    <p className='toast__message-text'>aaaa</p>
-                </main>
-                <button className='toast__button'>ss</button>
-            </div>
+        <div className={`toast toast-${props.title}`}>
+            <main className='toast__message'>
+                <p className='toast__message-title'>{props.title}</p>
+                <p className='toast__message-text'>{props.text}</p>
+            </main>
+            <button className='toast__button'>Dismiss</button>
         </div>
         
     );

@@ -34,3 +34,12 @@
     opacity: 0.5; /*투명도*/
     padding: 0;
 }
+.toast-success{
+    border-color: green;
+}
+.toast-warning{
+    border-color: yellow;
+}
+.toast-error{
+    border-color: red;
+}
