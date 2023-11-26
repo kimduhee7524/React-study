@@ -19,14 +19,22 @@ const inputNumberChangeHandler=(event) =>{
 const inputDateChangeHandler=(event) =>{
     setObjectState(prevState => ({...prevState, today:event.target.value}));
 };
-const btnSubimHandler =()=> {
+const btnSubimHandler =(event)=> {
+    event.preventDefault();
     console.log(objectState.name);
     console.log(objectState.price);
     console.log(objectState.today);
+
+    // 제출 후 초기화
+    setObjectState({
+        name:'',
+        price:0,
+        today:new Date()
+    })
 }
 
   return (
-    <form>
+    <form onSubmit={btnSubimHandler}>
       <div className='new-payment__controls'>
         <div className='new-payment__control'>
           <label>이름</label>
@@ -42,7 +50,7 @@ const btnSubimHandler =()=> {
         </div>
       </div>
       <div className='new-payment__actions'>
-        <button type='button' onClick={btnSubimHandler} >결제 추가</button>
+        <button type='submit' onClick={btnSubimHandler} >결제 추가</button>
       </div>
     </form>
   );
