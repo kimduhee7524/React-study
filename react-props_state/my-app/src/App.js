@@ -11,6 +11,12 @@ function App() {
 			amount: 12.33,
 			date: new Date(2025, 8, 14),
 		},
+		{
+			id: "e2",
+			title: "행주",
+			amount: 8.38,
+			date: new Date(2025, 8, 14),
+		},
 	])
 	const getPaymentData = (data)=>{
 		console.log(data);
@@ -21,13 +27,19 @@ function App() {
 				amount: data.price,
 				date: new Date(data.today)
 			},
+			...expenses
 		])
 	}
+	const deleteExpenseItem=(id)=>{
+		console.log(id);
+		const newFilerArray = expenses.filter((item) => item.id !==id);
+		setExpenses(newFilerArray);
+	};
 
 	return (
 		<>
 			<PaymentForm getPaymentData ={getPaymentData}/>
-			<Expenses items={expenses} />
+			<Expenses items={expenses} deleteExpenseItem={deleteExpenseItem}/>
 		</>
 	);
 }
