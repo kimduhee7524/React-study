@@ -31,7 +31,7 @@ const Expenses = (props) => {
 			  <ExpenseItem title={item.title} amount={item.amount} date={item.date} />
 			));
 		  } else {
-			return <p>값이 없습니다</p>;
+			return <p>값이 없습니다...!</p>;
 		  }
 		}
 	  };
