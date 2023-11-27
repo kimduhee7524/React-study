@@ -18,7 +18,7 @@ function App() {
 			date: new Date(2025, 8, 14),
 		},
 	])
-	// 리스트 추가 
+	// 리스트 추가 .
 	const getPaymentData = (data)=>{
 		console.log(data);
 		setExpenses([
@@ -31,7 +31,7 @@ function App() {
 			...expenses
 		])
 	}
-	//리스트 삭제
+	//리스트 삭제.
 	const deleteExpenseItem=(id)=>{
 		const newFilerArray = expenses.filter((item) => item.id !==id);
 		setExpenses(newFilerArray);
