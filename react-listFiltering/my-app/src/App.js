@@ -37,6 +37,7 @@ function App() {
 		},
 	]);
 
+  // 리스트 추가
 	const getPaymentFormData = (data) => {
 		setExpenses([
 			{
@@ -45,6 +46,7 @@ function App() {
 				amount: data.price,
 				date: new Date(data.today),
 			},
+      ...expenses
 		]);
 	};
 
