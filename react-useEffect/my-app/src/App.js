@@ -6,9 +6,10 @@ import MainHeader from './components/MainHeader/MainHeader';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  console.log("확인");
   useEffect(()=>{
     const storageLoggedInfo =localStorage.getItem('isLoggedIn');
+    console.log("check");
     if(storageLoggedInfo==='1') setIsLoggedIn(true);
   },[])
 
