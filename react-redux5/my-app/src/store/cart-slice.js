@@ -1,5 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice,createAsyncThunk  } from '@reduxjs/toolkit';
+import { doc, setDoc } from 'firebase/firestore';
+import {store} from '../remote/firebase'
 
+export const updateCartInFirestore = createAsyncThunk(
+  'cart/updateCartInFirestore',
+  async (cart, { rejectWithValue }) => {
+    try {
+      const cartDocRef = doc(store, 'carts', 'yourCartId');
+      await setDoc(cartDocRef, cart);
+      return cart;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
 
 const cartSlice = createSlice({
   name: 'cart',
